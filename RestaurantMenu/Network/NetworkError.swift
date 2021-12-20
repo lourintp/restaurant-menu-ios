@@ -7,10 +7,12 @@
 
 import Foundation
 
-enum NetworkError: Error, Equatable {
+public enum NetworkError: Error, Equatable {
     
     case invalidUrlString(url: String)
     case invalidURL(url: URLComponents)
-    case emptyPath
+    case emptyPath        
+    case invalidDecoding(message: String)
+
     
 }

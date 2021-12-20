@@ -20,6 +20,10 @@
 		887734E22770B55E00E63719 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887734E12770B55E00E63719 /* String+Extension.swift */; };
 		887734E42770B5D900E63719 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887734E32770B5D900E63719 /* NetworkError.swift */; };
 		887734E72770BAAD00E63719 /* RequestBodyCreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887734E62770BAAD00E63719 /* RequestBodyCreatorTests.swift */; };
+		887734E92770F0BF00E63719 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887734E82770F0BF00E63719 /* Result.swift */; };
+		887734EB2770F14200E63719 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887734EA2770F14200E63719 /* APIClient.swift */; };
+		887734ED2770F38300E63719 /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887734EC2770F38300E63719 /* NetworkAdapter.swift */; };
+		887734EF2771029C00E63719 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887734EE2771029C00E63719 /* APIClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		887734E12770B55E00E63719 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		887734E32770B5D900E63719 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		887734E62770BAAD00E63719 /* RequestBodyCreatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBodyCreatorTests.swift; sourceTree = "<group>"; };
+		887734E82770F0BF00E63719 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		887734EA2770F14200E63719 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		887734EC2770F38300E63719 /* NetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAdapter.swift; sourceTree = "<group>"; };
+		887734EE2771029C00E63719 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,9 @@
 				887734DC276E7AAB00E63719 /* APIRequest.swift */,
 				887734DE276E7AC200E63719 /* APIResponse.swift */,
 				887734E32770B5D900E63719 /* NetworkError.swift */,
+				887734E82770F0BF00E63719 /* Result.swift */,
+				887734EA2770F14200E63719 /* APIClient.swift */,
+				887734EC2770F38300E63719 /* NetworkAdapter.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -134,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				887734E62770BAAD00E63719 /* RequestBodyCreatorTests.swift */,
+				887734EE2771029C00E63719 /* APIClientTests.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -246,12 +258,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				887734E92770F0BF00E63719 /* Result.swift in Sources */,
 				887734DB276E7A7500E63719 /* RequestBodyCreator.swift in Sources */,
 				887734E42770B5D900E63719 /* NetworkError.swift in Sources */,
+				887734EB2770F14200E63719 /* APIClient.swift in Sources */,
 				887734E22770B55E00E63719 /* String+Extension.swift in Sources */,
 				887734AB276E704B00E63719 /* ViewController.swift in Sources */,
 				887734A7276E704B00E63719 /* AppDelegate.swift in Sources */,
 				887734DD276E7AAB00E63719 /* APIRequest.swift in Sources */,
+				887734ED2770F38300E63719 /* NetworkAdapter.swift in Sources */,
 				887734A9276E704B00E63719 /* SceneDelegate.swift in Sources */,
 				887734DF276E7AC200E63719 /* APIResponse.swift in Sources */,
 			);
@@ -262,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				887734E72770BAAD00E63719 /* RequestBodyCreatorTests.swift in Sources */,
+				887734EF2771029C00E63719 /* APIClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
