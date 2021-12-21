@@ -58,6 +58,22 @@ class APIClientTests: XCTestCase {
         XCTAssertEqual(networkAdapter.callerCounterSpy, 1)
     }
 
+    func testApiGetWithInvalidResponseReturnsDecodingError() {
+        networkAdapter.shouldRaiseError = true
+        let expectation = expectation(description: "requestExpectation")
+        
+        sut.get(MockRequest()) { response in
+            guard case .failure(.invalidDecoding) = response else {
+                XCTFail("Request should return decoding error")
+                return
+            }
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5)
+        XCTAssertEqual(requestBodyCreator.createRequestCalled, 1)
+        XCTAssertEqual(networkAdapter.callerCounterSpy, 1)
+    }
 }
 
 class RequestBodyCreatorMock: RequestBodyCreatorProtocol {
@@ -83,9 +99,19 @@ class RequestBodyCreatorMock: RequestBodyCreatorProtocol {
 class NetworkAdapterMock: NetworkAdapter {
     
     private(set) var callerCounterSpy: Int = 0
+    public var shouldRaiseError: Bool
+    
+    init(shouldRaiseError: Bool = false) {
+        self.shouldRaiseError = shouldRaiseError
+    }
     
     func get(destination: URLRequest, responseHandler: @escaping (Data) -> ()) {
         callerCounterSpy += 1
+        
+        if shouldRaiseError {
+            responseHandler(Data())
+            return
+        }
         
         let json = "{ \"anyField\": \"\" }"
         let serializedJson = Data(json.utf8)

@@ -39,8 +39,8 @@ class APIClient: APIClientProtocol {
                 let response = try JSONDecoder().decode(T.Response.self, from: responseData)
                 completion(.success(response))
                 return
-            } catch let error {
-                completion(.failure(.invalidDecoding(message: error.localizedDescription)))
+            } catch {
+                completion(.failure(.invalidDecoding))
             }
             
         }
