@@ -24,6 +24,8 @@
 		887734EB2770F14200E63719 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887734EA2770F14200E63719 /* APIClient.swift */; };
 		887734ED2770F38300E63719 /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887734EC2770F38300E63719 /* NetworkAdapter.swift */; };
 		887734EF2771029C00E63719 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887734EE2771029C00E63719 /* APIClientTests.swift */; };
+		887734F42771250E00E63719 /* MenuItemsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887734F32771250E00E63719 /* MenuItemsResponse.swift */; };
+		887734FA2772211000E63719 /* MenuItemsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887734F92772211000E63719 /* MenuItemsRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8856E8C32772292D00F9C513 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		887734A3276E704B00E63719 /* RestaurantMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		887734A6276E704B00E63719 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		887734A8276E704B00E63719 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +59,8 @@
 		887734EA2770F14200E63719 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		887734EC2770F38300E63719 /* NetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAdapter.swift; sourceTree = "<group>"; };
 		887734EE2771029C00E63719 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		887734F32771250E00E63719 /* MenuItemsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemsResponse.swift; sourceTree = "<group>"; };
+		887734F92772211000E63719 /* MenuItemsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemsRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +85,7 @@
 		8877349A276E704B00E63719 = {
 			isa = PBXGroup;
 			children = (
+				8856E8C32772292D00F9C513 /* Config.xcconfig */,
 				887734A5276E704B00E63719 /* RestaurantMenu */,
 				887734BC276E704D00E63719 /* RestaurantMenuTests */,
 				887734A4276E704B00E63719 /* Products */,
@@ -98,6 +104,7 @@
 		887734A5276E704B00E63719 /* RestaurantMenu */ = {
 			isa = PBXGroup;
 			children = (
+				887734F0277104A900E63719 /* Domain */,
 				887734E02770B4FF00E63719 /* Extension */,
 				887734D9276E7A5400E63719 /* Network */,
 				887734A6276E704B00E63719 /* AppDelegate.swift */,
@@ -148,6 +155,31 @@
 				887734EE2771029C00E63719 /* APIClientTests.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		887734F0277104A900E63719 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				887734F8277220FE00E63719 /* Request */,
+				887734F2277104CC00E63719 /* Response */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		887734F2277104CC00E63719 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				887734F32771250E00E63719 /* MenuItemsResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		887734F8277220FE00E63719 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				887734F92772211000E63719 /* MenuItemsRequest.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,10 +295,12 @@
 				887734E42770B5D900E63719 /* NetworkError.swift in Sources */,
 				887734EB2770F14200E63719 /* APIClient.swift in Sources */,
 				887734E22770B55E00E63719 /* String+Extension.swift in Sources */,
+				887734F42771250E00E63719 /* MenuItemsResponse.swift in Sources */,
 				887734AB276E704B00E63719 /* ViewController.swift in Sources */,
 				887734A7276E704B00E63719 /* AppDelegate.swift in Sources */,
 				887734DD276E7AAB00E63719 /* APIRequest.swift in Sources */,
 				887734ED2770F38300E63719 /* NetworkAdapter.swift in Sources */,
+				887734FA2772211000E63719 /* MenuItemsRequest.swift in Sources */,
 				887734A9276E704B00E63719 /* SceneDelegate.swift in Sources */,
 				887734DF276E7AC200E63719 /* APIResponse.swift in Sources */,
 			);
@@ -429,6 +463,7 @@
 		};
 		887734CE276E704D00E63719 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8856E8C32772292D00F9C513 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -459,6 +494,7 @@
 		};
 		887734CF276E704D00E63719 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8856E8C32772292D00F9C513 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

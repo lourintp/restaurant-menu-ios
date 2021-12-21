@@ -25,10 +25,12 @@ public struct RequestBodyCreator: RequestBodyCreatorProtocol {
         }
         
         var requestData = URLRequest(url: url)
+        
+        if request.method != .get { requestData.httpBody = try toData(request) }
                 
         requestData.httpMethod = request.method.rawValue
         requestData.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        requestData.httpBody = try toData(request)
+        requestData.headers = ["X-API-KEY": apiKey]
         return requestData
     }
     
@@ -38,6 +40,15 @@ public struct RequestBodyCreator: RequestBodyCreatorProtocol {
         jsonEncoder.dateEncodingStrategy = .iso8601
             
         return try jsonEncoder.encode(data)
+    }
+    
+    private var apiKey: String {
+        get {
+            guard let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String else {
+                fatalError("Couldn't find key 'API_KEY'.")
+            }
+            return apiKey
+        }
     }
     
 }

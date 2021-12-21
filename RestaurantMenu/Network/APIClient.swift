@@ -22,16 +22,16 @@ class APIClient: APIClientProtocol {
     }
     
     func get<T>(_ request: T, completion: @escaping ResultCallback<DataContainer<T.Response>>) where T : APIRequest {
-        let endpoint: String!
+        let endpoint: URLRequest
                        
         do {
-            endpoint = try requestBodyCreator.create(for: request, url: "https://api.documenu.xyz/v2").url?.absoluteString
+            endpoint = try requestBodyCreator.create(for: request, url: "https://api.documenu.com/v2")
         } catch let error {
             completion(.failure(.invalidUrlString(url: error.localizedDescription)))
             return
         }
         
-        networkAdapter.get(destination: endpoint, headers: [:], payload: [:]) { responseData in
+        networkAdapter.get(destination: endpoint) { responseData in
             let stringData = String(data: responseData, encoding: .utf8)
             print("Response body: \(stringData ?? "")")
             
@@ -45,5 +45,4 @@ class APIClient: APIClientProtocol {
             
         }
     }
-    
 }
