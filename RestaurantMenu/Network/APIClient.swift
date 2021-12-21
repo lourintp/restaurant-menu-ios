@@ -27,7 +27,7 @@ class APIClient: APIClientProtocol {
         do {
             endpoint = try requestBodyCreator.create(for: request, url: "https://api.documenu.com/v2")
         } catch let error {
-            completion(.failure(.invalidUrlString(url: error.localizedDescription)))
+            completion(.failure((error as! NetworkError)))
             return
         }
         

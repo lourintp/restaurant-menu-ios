@@ -70,4 +70,6 @@ struct MockRequest: APIRequest {
     }
 }
 
-struct MockResponse: APIResponse {}
+struct MockResponse: APIResponse {
+    let anyField: String
+}
