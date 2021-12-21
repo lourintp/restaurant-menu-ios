@@ -85,7 +85,6 @@
 		8877349A276E704B00E63719 = {
 			isa = PBXGroup;
 			children = (
-				8856E8C32772292D00F9C513 /* Config.xcconfig */,
 				887734A5276E704B00E63719 /* RestaurantMenu */,
 				887734BC276E704D00E63719 /* RestaurantMenuTests */,
 				887734A4276E704B00E63719 /* Products */,
@@ -114,6 +113,7 @@
 				887734AF276E704C00E63719 /* Assets.xcassets */,
 				887734B1276E704C00E63719 /* LaunchScreen.storyboard */,
 				887734B4276E704C00E63719 /* Info.plist */,
+				8856E8C32772292D00F9C513 /* Config.xcconfig */,
 			);
 			path = RestaurantMenu;
 			sourceTree = "<group>";
