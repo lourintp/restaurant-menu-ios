@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		880335F22773B384000DC60A /* RestaurantMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880335F12773B384000DC60A /* RestaurantMenuPresenter.swift */; };
-		880335F82773F808000DC60A /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880335F72773F808000DC60A /* UICollectionView+Extension.swift */; };
 		880335FD277502AD000DC60A /* SectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880335FC277502AD000DC60A /* SectionCollectionViewCell.swift */; };
 		8856E8DE2773569100F9C513 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8856E8CC2773569000F9C513 /* Montserrat-Bold.ttf */; };
 		8856E8E72773569100F9C513 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8856E8D52773569100F9C513 /* Montserrat-Italic.ttf */; };
@@ -46,7 +45,6 @@
 
 /* Begin PBXFileReference section */
 		880335F12773B384000DC60A /* RestaurantMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMenuPresenter.swift; sourceTree = "<group>"; };
-		880335F72773F808000DC60A /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		880335FC277502AD000DC60A /* SectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		8856E8C32772292D00F9C513 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		8856E8CC2773569000F9C513 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				887734E12770B55E00E63719 /* String+Extension.swift */,
-				880335F72773F808000DC60A /* UICollectionView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -367,7 +364,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				880335F82773F808000DC60A /* UICollectionView+Extension.swift in Sources */,
 				887734E92770F0BF00E63719 /* Result.swift in Sources */,
 				880335F22773B384000DC60A /* RestaurantMenuPresenter.swift in Sources */,
 				887734DB276E7A7500E63719 /* RequestBodyCreator.swift in Sources */,
