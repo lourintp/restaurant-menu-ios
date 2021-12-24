@@ -38,9 +38,9 @@ class RestaurantMenuPresenter: RestauranteMenuPresenterProtocol {
             case .success(let response):
                 let menuItemsResponse = response as! MenuItemsResponse
                 let items = menuItemsResponse.items
+                self.view.populateRestaurantName(items.first!.restaurantName)
                 self.view.populateSections(Array(self.splitBySubsection(items: items)))
                 self.view.onFetchMenuItems(items)
-                self.view.populateRestaurantName(items.first!.restaurantName)
                 
             case .failure(let error):
                 print(error?.localizedDescription ?? "")

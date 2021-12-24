@@ -17,7 +17,7 @@ class MenuViewController: UIViewController {
     private var sections: [String] = []
     private var items: [MenuItem] = []
     private var itemsPerSection: [MenuItem] = []
-    private var indexSelected: Int = 0
+    private var indexSelected: Int?
     
     private var presenter: RestauranteMenuPresenterProtocol!
     
@@ -54,12 +54,13 @@ extension MenuViewController: RestaurantMenuView {
     }
     
     func onFetchMenuItems(_ items: [MenuItem]) {
-        self.items = items
+        self.items = items        
     }
     
     func onSelecteSubsection(_ subsection: String) {
         self.itemsPerSection = self.items.filter( {$0.subsection == subsection} )
         tableView.reloadData()
+        scrollToTop()
     }
     
     func onError(message: String) {
@@ -86,6 +87,11 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         cell.itemPrice.text = itemsPerSection[indexPath.row].pricing.first!.priceString.replacingOccurrences(of: " ", with: "")
         
         return cell
+    }
+    
+    private func scrollToTop() {
+        let indexPath = IndexPath(item: 0, section: 0)
+        self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
     
 }
