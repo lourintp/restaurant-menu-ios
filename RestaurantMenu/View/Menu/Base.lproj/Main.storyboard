@@ -14,6 +14,9 @@
         <array key="Montserrat-Regular.ttf">
             <string>Montserrat-Regular</string>
         </array>
+        <array key="PlayfairDisplay-Regular.ttf">
+            <string>PlayfairDisplay-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Menu View Controller-->
@@ -24,49 +27,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Iw-ny-wEb">
-                                <rect key="frame" x="93.5" y="78" width="227.5" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Iw-ny-wEb">
+                                <rect key="frame" x="207" y="78" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="26"/>
                                 <color key="textColor" red="0.090196078431372548" green="0.086274509803921567" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90b-Sx-whq">
-                                <rect key="frame" x="0.0" y="134" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="102" width="414" height="1"/>
                                 <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Fw9-fU-qui"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Usa-RY-OrB">
-                                <rect key="frame" x="169" y="207" width="76" height="32"/>
+                                <rect key="frame" x="169" y="175" width="76" height="32"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="26"/>
                                 <color key="textColor" name="SubtitleColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="519-bN-XHr">
-                                <rect key="frame" x="30" y="283" width="354" height="1"/>
+                                <rect key="frame" x="30" y="251" width="354" height="1"/>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="4Jj-vi-kF9"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyj-sc-56c">
-                                <rect key="frame" x="30" y="384" width="354" height="1"/>
+                                <rect key="frame" x="30" y="352" width="354" height="1"/>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="JHf-Sl-lgt"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gDs-Zt-XWx">
-                                <rect key="frame" x="30" y="415" width="354" height="447"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gDs-Zt-XWx">
+                                <rect key="frame" x="30" y="383" width="354" height="479"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuItemTableViewCell" rowHeight="292" id="M8I-JV-hTv" customClass="MenuItemTableViewCell" customModule="RestaurantMenu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="354" height="292"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M8I-JV-hTv" id="4h9-mK-NcL">
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="292"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ia0-Uj-aBu">
+                                                    <rect key="frame" x="147.5" y="19" width="59" height="32"/>
+                                                    <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="24"/>
+                                                    <color key="textColor" name="SubtitleColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="re9-6u-m1L">
+                                                    <rect key="frame" x="28" y="71" width="298" height="21.5"/>
+                                                    <fontDescription key="fontDescription" name="PlayfairDisplay-Regular" family="Playfair Display" pointSize="16"/>
+                                                    <color key="textColor" name="AccentColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPh-Hb-t78">
+                                                    <rect key="frame" x="158" y="223.5" width="38.5" height="17.5"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                                    <color key="textColor" name="AccentColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YPh-Hb-t78" firstAttribute="top" relation="greaterThanOrEqual" secondItem="re9-6u-m1L" secondAttribute="bottom" constant="30" id="9hr-0v-d4H"/>
+                                                <constraint firstItem="re9-6u-m1L" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4h9-mK-NcL" secondAttribute="leadingMargin" constant="8" id="Fp8-de-ejz"/>
+                                                <constraint firstItem="re9-6u-m1L" firstAttribute="centerX" secondItem="Ia0-Uj-aBu" secondAttribute="centerX" id="LhY-9p-Czm"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="re9-6u-m1L" secondAttribute="trailing" constant="8" id="Ohg-LM-sUw"/>
+                                                <constraint firstItem="YPh-Hb-t78" firstAttribute="centerX" secondItem="4h9-mK-NcL" secondAttribute="centerX" id="j4B-Ms-BJX"/>
+                                                <constraint firstItem="re9-6u-m1L" firstAttribute="top" secondItem="Ia0-Uj-aBu" secondAttribute="bottom" constant="20" id="kh6-Ph-pab"/>
+                                                <constraint firstItem="Ia0-Uj-aBu" firstAttribute="centerX" secondItem="4h9-mK-NcL" secondAttribute="centerX" id="moN-fj-mk0"/>
+                                                <constraint firstItem="Ia0-Uj-aBu" firstAttribute="top" secondItem="4h9-mK-NcL" secondAttribute="topMargin" constant="8" id="sMf-Mc-Gan"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="YPh-Hb-t78" secondAttribute="bottom" constant="40" id="uG4-7J-Oci"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="itemDescription" destination="re9-6u-m1L" id="SGw-HG-imw"/>
+                                            <outlet property="itemName" destination="Ia0-Uj-aBu" id="C7o-9G-u0d"/>
+                                            <outlet property="itemPrice" destination="YPh-Hb-t78" id="T0C-26-Tn2"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="q15-FL-jVP"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="GQY-Tw-wi0"/>
                                 </connections>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-eO-4XC">
-                                <rect key="frame" x="30" y="292" width="354" height="84"/>
+                                <rect key="frame" x="30" y="260" width="354" height="84"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="auJ-uU-pmp">
                                     <size key="itemSize" width="105" height="78"/>
@@ -156,6 +205,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="SubtitleColor">
             <color red="0.125" green="0.125" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

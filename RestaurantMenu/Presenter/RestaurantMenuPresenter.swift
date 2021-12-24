@@ -8,6 +8,7 @@
 import Foundation
 
 protocol RestaurantMenuView {
+    func populateRestaurantName(_ name: String)
     func onFetchMenuItems(_ items: [MenuItem])
     func populateSections(_ sections: [String])
     func onSelecteSubsection(_ subsection: String)
@@ -17,6 +18,7 @@ protocol RestaurantMenuView {
 protocol RestauranteMenuPresenterProtocol {
     var view: RestaurantMenuView { get set }
     func loadMenuItems()
+    func onItemSelected(subsection: String)
     
 }
 
@@ -37,12 +39,18 @@ class RestaurantMenuPresenter: RestauranteMenuPresenterProtocol {
                 let menuItemsResponse = response as! MenuItemsResponse
                 let items = menuItemsResponse.items
                 self.view.populateSections(Array(self.splitBySubsection(items: items)))
+                self.view.onFetchMenuItems(items)
+                self.view.populateRestaurantName(items.first!.restaurantName)
                 
             case .failure(let error):
                 print(error?.localizedDescription ?? "")
                 break
             }
         }
+    }
+    
+    func onItemSelected(subsection: String) {
+        self.view.onSelecteSubsection(subsection)
     }
     
     private func splitBySubsection(items: [MenuItem]) -> Set<String> {

@@ -15,6 +15,8 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var sections: [String] = []
+    private var items: [MenuItem] = []
+    private var itemsPerSection: [MenuItem] = []
     private var indexSelected: Int = 0
     
     private var presenter: RestauranteMenuPresenterProtocol!
@@ -42,21 +44,27 @@ class MenuViewController: UIViewController {
 
 extension MenuViewController: RestaurantMenuView {
     
+    func populateRestaurantName(_ name: String) {
+        self.titleLabel.text = name
+    }
+    
     func populateSections(_ sections: [String]) {
-        self.sections = sections
+        self.sections = sections        
         collectionView.reloadData()
     }
     
     func onFetchMenuItems(_ items: [MenuItem]) {
-        
+        self.items = items
     }
     
     func onSelecteSubsection(_ subsection: String) {
-        
+        self.itemsPerSection = self.items.filter( {$0.subsection == subsection} )
+        tableView.reloadData()
     }
     
     func onError(message: String) {
-        
+        let dialogMessage = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
+        present(dialogMessage, animated: true)
     }
     
 }
@@ -64,12 +72,20 @@ extension MenuViewController: RestaurantMenuView {
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return itemsPerSection.count
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        if itemsPerSection.count <= 0 {
+            return UITableViewCell()
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MenuItemTableViewCell.self), for: indexPath) as! MenuItemTableViewCell
+        cell.itemName.text = itemsPerSection[indexPath.row].name
+        cell.itemDescription.text = itemsPerSection[indexPath.row].description
+        cell.itemPrice.text = itemsPerSection[indexPath.row].pricing.first!.priceString.replacingOccurrences(of: " ", with: "")
+        
+        return cell
     }
     
 }
@@ -96,6 +112,7 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSour
         indexSelected = indexPath.row
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         collectionView.reloadData()
+        presenter.onItemSelected(subsection: sections[indexPath.row])
     }
     
 }

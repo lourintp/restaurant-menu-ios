@@ -32,12 +32,14 @@ struct MenuItem: APIResponse {
     let description: String
     let name: String
     let subsection: String
+    let restaurantName: String
     let pricing: [Pricing]
     
     enum CodingKeys: String, CodingKey {
         case description = "menu_item_description"
         case name = "menu_item_name"
         case subsection
+        case restaurantName = "restaurant_name"
         case pricing = "menu_item_pricing"
     }
 }
