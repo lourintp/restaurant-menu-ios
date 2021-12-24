@@ -9,14 +9,20 @@ import Foundation
 
 protocol RestaurantMenuView {
     func onFetchMenuItems(_ items: [MenuItem])
-    func populateSections(_ sections: Set<String>)
+    func populateSections(_ sections: [String])
     func onSelecteSubsection(_ subsection: String)
     func onError(message: String)
 }
 
-class RestaurantMenuPresenter {
+protocol RestauranteMenuPresenterProtocol {
+    var view: RestaurantMenuView { get set }
+    func loadMenuItems()
     
-    private let view: RestaurantMenuView
+}
+
+class RestaurantMenuPresenter: RestauranteMenuPresenterProtocol {
+    
+    var view: RestaurantMenuView
     private let apiClient: APIClientProtocol
     
     init(view: RestaurantMenuView, apiClient: APIClientProtocol) {
@@ -25,12 +31,12 @@ class RestaurantMenuPresenter {
     }
     
     func loadMenuItems() {
-        apiClient.get(MenuItemsRequest(id: "3285880097264500")) { response in
+        apiClient.get(MenuItemsRequest(id: "38233881122639360")) { response in
             switch response {
             case .success(let response):
                 let menuItemsResponse = response as! MenuItemsResponse
                 let items = menuItemsResponse.items
-                self.view.populateSections(self.splitBySubsection(items: items))
+                self.view.populateSections(Array(self.splitBySubsection(items: items)))
                 
             case .failure(let error):
                 print(error?.localizedDescription ?? "")
@@ -39,7 +45,7 @@ class RestaurantMenuPresenter {
         }
     }
     
-    func splitBySubsection(items: [MenuItem]) -> Set<String> {
+    private func splitBySubsection(items: [MenuItem]) -> Set<String> {
         let allSections = Set(items.map( {$0.subsection} ))
         return allSections
     }
