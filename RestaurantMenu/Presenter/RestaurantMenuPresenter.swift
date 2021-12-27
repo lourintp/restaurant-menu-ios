@@ -39,7 +39,7 @@ class RestaurantMenuPresenter: RestauranteMenuPresenterProtocol {
                 let menuItemsResponse = response as! MenuItemsResponse
                 let items = menuItemsResponse.items
                 self.view.populateRestaurantName(items.first!.restaurantName)
-                self.view.populateSections(Array(self.splitBySubsection(items: items)))
+                self.view.populateSections(self.splitBySubsection(items: items))
                 self.view.onFetchMenuItems(items)
                 
             case .failure(let error):
@@ -53,8 +53,8 @@ class RestaurantMenuPresenter: RestauranteMenuPresenterProtocol {
         self.view.onSelecteSubsection(subsection)
     }
     
-    private func splitBySubsection(items: [MenuItem]) -> Set<String> {
-        let allSections = Set(items.map( {$0.subsection} ))
+    private func splitBySubsection(items: [MenuItem]) -> [String] {
+        let allSections = Set(items.map( {$0.subsection} )).sorted()
         return allSections
     }
     
