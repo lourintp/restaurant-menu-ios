@@ -33,7 +33,8 @@ class RestaurantMenuPresenter: RestauranteMenuPresenterProtocol {
     }
     
     func loadMenuItems() {
-        apiClient.get(MenuItemsRequest(id: "38233881122639360")) { response in
+        apiClient.get(MenuItemsRequest(id: "38233881122639360")) { [weak self] response in
+            guard let self = self else { return }
             switch response {
             case .success(let response):
                 let menuItemsResponse = response as! MenuItemsResponse
